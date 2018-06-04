@@ -1,13 +1,6 @@
-# fred
+# demo-cljs-garden
 
-A complete, working sample project to demonstrate working code with external JavaScript dependency
-
-## Overview
-
-Say you have a JavaScript library you need to include in a ClojureScript project.  We have an
-example file `dino.js` we wish to depend on.  The file `dino-externs.js` shows how to tell the
-Google Closure compiler about the dependency. The `project.clj` file shows the right syntax to make
-everything work as it should.
+A complete, working sample project to demonstrate working code with integrated Garden CSS generation
 
 ## Setup
 
