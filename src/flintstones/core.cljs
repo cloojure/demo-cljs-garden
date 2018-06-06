@@ -26,7 +26,7 @@ Go ahead and edit it and see reloading in action. Again, or not.")
     css-str))
 
 (println "Installed via Garden:  \n"
-  (install-css [:.btn-1 {:background-color :#337ab7 ; or "#337ab7"
+  (install-css [:.doit-class {:background-color :#337ab7 ; or "#337ab7"
                          :color            :white
                          :text-align       :center
                          :display          :inline-block
@@ -44,7 +44,7 @@ Go ahead and edit it and see reloading in action. Again, or not.")
 
 (def btn-doit-counter (r/atom 0))
 (defn doit-btn []
-  [:button.btn-1
+  [:button.doit-class
    {:on-click (fn [& args]
                 (swap! btn-doit-counter inc)
                 (println (fmt/format "Done it %d times!" @btn-doit-counter)))}
