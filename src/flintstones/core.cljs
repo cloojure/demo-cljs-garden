@@ -31,9 +31,13 @@ Go ahead and edit it and see reloading in action. Again, or not.")
                          :text-align       :center
                          :display          :inline-block
                          :font-size        :16px
-                         :padding          [:6px :12px]
+                         :padding          [:10px :15px]
                          :border           "1px solid"
                          :border-radius    :5px }]))
+(println "Installed via Garden:  \n"
+  (install-css [:.para-1 {:background-color :lightblue
+                         :color            :RebeccaPurple
+                         :font-size        :16px }]))
 
 (defn css-comp []
   [:p.someClass "I am a CSS hamster!"])
@@ -46,10 +50,18 @@ Go ahead and edit it and see reloading in action. Again, or not.")
                 (println (fmt/format "Done it %d times!" @btn-doit-counter)))}
    (str "Just do it (" @btn-doit-counter ")")])
 
+;-----------------------------------------------------------------------------
+(defn rand-para []
+  [:p.para-1
+"This is some test just show that we can type anything we desire, and use an internal style definition independent
+of any outside influences. It could go on and on and on and on and on and on and on and on and on...." ])
+
+;-----------------------------------------------------------------------------
 (defn demo-component []
   [:div
    [css-comp]
    [doit-btn]
+   [rand-para]
   ])
 
 (defonce reload-counter (r/atom 0))
