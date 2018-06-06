@@ -13,8 +13,11 @@ Go ahead and edit it and see reloading in action. Again, or not.")
 (println " Hello World! " )
 (let [s1 (garden/css [:body {:font-size "16px"}])
       s2 (garden/css [:p.someClass {:font-size "25px" :color :RebeccaPurple}]) ; https://codepen.io/trezy/post/honoring-a-great-man
-      btn-1 (garden/css [:.btn-1 {:background-color :mediumblue
+      btn-1 (garden/css [:.btn-1 {:background-color "#337ab7"
                                   :color            :white
+                                  :text-align       :center
+                                  :display          :inline-block
+                                  :font-size        "16px"
                                   :padding          "6px 12px"
                                   :border           "1px solid"
                                   :border-radius    :5px}
