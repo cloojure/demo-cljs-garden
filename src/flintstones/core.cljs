@@ -37,8 +37,8 @@ Go ahead and edit it and see reloading in action. Again, or not.")
     "I have " [:strong "bold"]
     [:span {:style {:color "red"}} " and red"] " text."]
    [css-comp]
-   [:button.btn-1 {:on-click #(println "Done it!")}
-      "Just do it."]
+   [:button.btn-1 {:on-click #(println "Done it!")
+                   :value "Just do it."}]
   ])
 
 (defonce counter (atom 0))
