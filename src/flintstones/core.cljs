@@ -20,6 +20,10 @@ Go ahead and edit it and see reloading in action. Again, or not.")
   (println "Garden s2:  " (pr-str s2))
   (println "Install Result: " (style/installStyles s2)))
 
+(defn css-comp []
+  [:p.someClass "I am a CSS hamster!"])
+
+;-----------------------------------------------------------------------------
 (defn install-css [css-def]
   (let [css-str (garden/css css-def)]
     (style/installStyles css-str)
@@ -34,14 +38,6 @@ Go ahead and edit it and see reloading in action. Again, or not.")
                          :padding          "10px 15px 10px 15px" ; or [[:10px :15px :10px :15px]]
                          :border           "1px solid"
                          :border-radius    :5px}]))
-(println "Installed via Garden:  \n"
-  (install-css [:.para-1 {:background-color :lightblue
-                         :color            :RebeccaPurple
-                         :font-size        :16px }]))
-
-(defn css-comp []
-  [:p.someClass "I am a CSS hamster!"])
-
 (def btn-doit-counter (r/atom 0))
 (defn doit-btn []
   [:button.doit-class
@@ -51,6 +47,11 @@ Go ahead and edit it and see reloading in action. Again, or not.")
    (str "Just do it (" @btn-doit-counter ")")])
 
 ;-----------------------------------------------------------------------------
+(println "Installed via Garden:  \n"
+         (install-css [:.para-1 {:background-color :lightblue
+                                 :color            :RebeccaPurple
+                                 :font-size        :16px }]))
+
 (defn rand-para []
   [:p.para-1
 "This is some test just show that we can type anything we desire, and use an internal style definition independent
@@ -78,5 +79,4 @@ of any outside influences. It could go on and on and on and on and on and on and
   (println "Initial load")
   (figwheel-reload))
 (run)
-
 
