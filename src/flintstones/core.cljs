@@ -5,7 +5,7 @@
     [oops.core :as oops]
     [reagent.core :as r]
     [reagent.format :as fmt]
-))
+  ))
 
 (enable-console-print!)
 (println
@@ -25,16 +25,15 @@ Go ahead and edit it and see reloading in action. Again, or not.")
     (style/installStyles css-str)
     css-str))
 
-(println "Garden btn-1:  \n"
-  (install-css [".btn-1" {:background-color "#337ab7"
+(println "Installed via Garden:  \n"
+  (install-css [:.btn-1 {:background-color :#337ab7 ; or "#337ab7"
                          :color            :white
                          :text-align       :center
                          :display          :inline-block
                          :font-size        :16px
                          :padding          [:6px :12px]
                          :border           "1px solid"
-                         :border-radius    :5px
-                         }]))
+                         :border-radius    :5px }]))
 
 (defn css-comp []
   [:p.someClass "I am a CSS hamster!"])
@@ -53,7 +52,7 @@ Go ahead and edit it and see reloading in action. Again, or not.")
    [doit-btn]
   ])
 
-(defonce counter (atom 0))
+(defonce reload-counter (r/atom 0))
 
 (defn run []
   (r/render [demo-component] (js/document.getElementById "tgt-div")))
@@ -61,11 +60,10 @@ Go ahead and edit it and see reloading in action. Again, or not.")
 (defn figwheel-reload []
   ; optionally touch your app-state to force rerendering depending on your application
   ; (swap! app-state update-in [:__figwheel_counter] inc)
-  (println "Reloading: " (swap! counter inc)))
+  (println "reload-counter =" (swap! reload-counter inc)))
 
-(when (zero? @counter)
+(when (zero? @reload-counter)
   (println "Initial load")
   (figwheel-reload))
 (run)
-
 
