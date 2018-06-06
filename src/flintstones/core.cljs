@@ -31,9 +31,9 @@ Go ahead and edit it and see reloading in action. Again, or not.")
                          :text-align       :center
                          :display          :inline-block
                          :font-size        :16px
-                         :padding          [:10px :15px]
+                         :padding          "10px 15px 10px 15px" ; or [[:10px :15px :10px :15px]]
                          :border           "1px solid"
-                         :border-radius    :5px }]))
+                         :border-radius    :5px}]))
 (println "Installed via Garden:  \n"
   (install-css [:.para-1 {:background-color :lightblue
                          :color            :RebeccaPurple
@@ -78,4 +78,5 @@ of any outside influences. It could go on and on and on and on and on and on and
   (println "Initial load")
   (figwheel-reload))
 (run)
+
 
