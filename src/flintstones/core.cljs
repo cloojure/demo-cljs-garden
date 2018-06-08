@@ -3,10 +3,8 @@
     [garden.core :as garden]
     [garden.stylesheet :as gstyle]
     [goog.style :as style]
-    [oops.core :as oops]
     [reagent.core :as r]
-    [reagent.format :as fmt]
-  ))
+    [reagent.format :as fmt] ))
 
 (enable-console-print!)
 (println
@@ -89,16 +87,15 @@ Go ahead and edit it and see reloading in action. Again, or not.")
       :overflow-x :hidden  }
      ]))
 
-; suppress IE responsive
 (println "#4"
-         (install-css
-           (gstyle/at-media
-             {:all               true
-              :-ms-high-contrast :none}
-             [:body {:width     :auto!important
-                     :min-width :1280px!important
-                     :overflow  :auto!important}
-              ])))
+   (install-css
+     (gstyle/at-media
+       {:all               true
+        :-ms-high-contrast :none} ; suppress IE responsive
+       [:body {:width     :auto!important
+               :min-width :1280px!important
+               :overflow  :auto!important}
+        ] )))
 
 ;-----------------------------------------------------------------------------
 (defn demo-component []
