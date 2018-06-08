@@ -54,9 +54,9 @@ Go ahead and edit it and see reloading in action. Again, or not.")
 
 ;-----------------------------------------------------------------------------
 (println "Installed via Garden:  \n"
-         (install-css [:div [:p {:background-color :lightblue
-                                 :color            :blue
-                                 :font-size        :16px}]]))
+   (install-css [:div [:p {:background-color :lightblue
+                           :color            :blue
+                           :font-size        :16px}]]))
 
 (defn rand-para []
   [:div
@@ -65,6 +65,7 @@ Go ahead and edit it and see reloading in action. Again, or not.")
     of any outside influences. It could go on and on and on and on and on and on and on and on and on...."]])
 
 ;-----------------------------------------------------------------------------
+; Examples for Tim Christiansen
 (println   "#1"
   (install-css
     [:html                              ; .slm-structure-html
